@@ -1,0 +1,14 @@
+#screen 0
+#select 0
+#exec $HOME/.ssh/screen-ssh-agent
+#exec true
+#source $HOME/tmp/ssh/screen_agent
+
+term screen-256color
+defbce "on"
+
+attrcolor b ".I" # use bright colors for bold
+defutf8 on
+defscrollback 65000
+hardstatus alwayslastline
+hardstatus string '%{=b .K}%H | %{=b .K}%Y-%m-%d %{=b .K}%c %{= .K}| %{=b .k} %n%f %t %{= .k}| %{=b .K}%W'

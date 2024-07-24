@@ -1,0 +1,18 @@
+[submodule "pack/preservim/start/vim-markdown"]
+	path = pack/preservim/start/vim-markdown
+	url = https://github.com/preservim/vim-markdown.git
+[submodule "pack/preservim/start/nerdtree"]
+	path = pack/preservim/start/nerdtree
+	url = https://github.com/preservim/nerdtree.git
+[submodule "pack/yegappan/start/taglist"]
+	path = pack/yegappan/start/taglist
+	url = https://github.com/yegappan/taglist
+[submodule "pack/prabirshrestha/start/vim-lsp"]
+	path = pack/prabirshrestha/start/vim-lsp
+	url = https://github.com/prabirshrestha/vim-lsp
+[submodule "pack/pasky/start/claude"]
+	path = pack/pasky/start/claude
+	url = https://github.com/pasky/claude.vim.git
+[submodule "pack/epheien/start/termdbg"]
+	path = pack/epheien/start/termdbg
+	url = https://github.com/epheien/termdbg.git
