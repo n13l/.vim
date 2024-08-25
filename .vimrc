@@ -16,7 +16,7 @@ set noswapfile
 set ignorecase
 set binary
 set noeol
-
+set shortmess-=S
 
 set fillchars+=vert:\ 
 let NERDTreeShowHidden=1
