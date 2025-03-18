@@ -6,7 +6,7 @@ set fileencodings=utf-8
 
 set number                                                                      
 set nocompatible
-set statusline+=%o
+set statusline+="%o %f"
 set ruler                                                                       
 set showmode                                                                    
 set backspace=2                                                                 
@@ -28,17 +28,17 @@ hi WinSeparator term=bold ctermfg=grey guifg=grey gui=bold guifg=grey
 source ~/.claude_api_key
 
 if &term=~'screen-256color' 
-	colo ron
+	colo quiet
 	hi LineNr term=bold ctermfg=grey guifg=grey gui=bold guifg=grey
 endif
 
 if &term=~'xterm' 
-	colo ron
+	colo quiet
 	hi LineNr term=bold ctermfg=grey guifg=grey gui=bold guifg=grey
 endif
 
 if &term=~'xterm-256color' 
-	colo ron
+	colo quiet
 	hi LineNr term=bold ctermfg=grey guifg=grey gui=bold guifg=grey
 endif
 
@@ -46,7 +46,7 @@ endif
 if has("unix")                                                                  
 	let s:uname = system("uname")                                           
 	if s:uname == "Linux\n"
-		colo ron
+		colo quiet
 	endif                                                                   
 endif
 
@@ -118,8 +118,8 @@ nnoremap <Leader>q :q<CR>
 
 au User lsp_setup call lsp#register_server({
     \ 'name': 'clangd',
-    \ 'cmd': {server_info->['clangd', '--background-index', '--header-insertion=never']},
-    \ 'allowlist': ['c', 'cpp', 'objc'],
+    \ 'cmd': {server_info->['clangd', '--log=verbose', '--background-index', '--header-insertion=never']},
+    \ 'allowlist': ['c', 'cpp', 'cc', 'objc'],
     \ 'initialization_options': {},
     \ })
 
@@ -146,3 +146,31 @@ augroup lsp_install
     au!
     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
+
+nnoremap <F7> :call ToggleLocationList()<CR>
+
+function! ToggleLocationList()
+    if empty(getloclist(0))
+        echo "Location list is empty"
+    elseif getwininfo(win_getid())[0]['loclist']
+        lclose
+    else
+        lopen
+    endif
+endfunction
+
+let g:lsp_diagnostics_virtual_text_enabled = 0
+let g:lsp_diagnostics_echo_cursor = 1
+
+" Disable automatic opening of the location list
+let g:lsp_diagnostics_highlights_enabled = 1
+let g:lsp_diagnostics_auto_open = 0
+let g:lsp_diagnostics_auto_popup = 0
+
+"autocmd! User lsp_diagnostics_updated
+autocmd QuickFixCmdPost * cclose
+
+" Show errors in location list
+"autocmd CursorHold * LspDocumentDiagnostics
+
+autocmd ColorScheme * highlight VertSplit term=bold ctermbg=darkgrey ctermfg=white guibg=darkgrey
