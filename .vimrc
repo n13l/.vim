@@ -27,7 +27,7 @@ hi WinSeparator term=bold ctermfg=grey guifg=grey gui=bold guifg=grey
 
 source ~/.claude_api_key
 
-colo blue
+" colo blue
 
 if &term=~'screen-256color' 
 	colo quiet
