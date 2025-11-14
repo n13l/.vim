@@ -176,3 +176,17 @@ autocmd QuickFixCmdPost * cclose
 "autocmd CursorHold * LspDocumentDiagnostics
 
 autocmd ColorScheme * highlight VertSplit term=bold ctermbg=darkgrey ctermfg=white guibg=darkgrey
+
+" Normal mode: Put current change to other buffer
+nnoremap <Leader>dp :diffput<CR>
+"
+" " Visual mode: Put selected block to other buffer
+vnoremap <Leader>dp :diffput<CR>
+"
+" " Normal mode: Get change from other buffer
+nnoremap <Leader>dg :diffget<CR>
+"
+" " Visual mode: Get selected block from other buffer
+vnoremap <Leader>dg :diffget<CR>
+
+nnoremap <leader>g :grep<Space>
