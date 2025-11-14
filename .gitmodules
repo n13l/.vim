@@ -19,3 +19,6 @@
 [submodule "pack/junegunn/start/fzf.vim"]
 	path = pack/junegunn/start/fzf.vim
 	url = https://github.com/junegunn/fzf.vim.git
+[submodule "pack/junegunn/start/fzf"]
+	path = pack/junegunn/start/fzf
+	url = https://github.com/junegunn/fzf.git

@@ -190,3 +190,12 @@ nnoremap <Leader>dg :diffget<CR>
 vnoremap <Leader>dg :diffget<CR>
 
 nnoremap <leader>g :grep<Space>
+
+" Make sure viminfo remembers old files
+set viminfo='100,f1
+"
+" " Map F5 to recent files (MRU) using fzf
+nnoremap <F5> :History<CR>
+"
+" " Map F6 to fuzzy search all files using fzf
+nnoremap <F6> :Files<CR>
