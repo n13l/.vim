@@ -16,6 +16,3 @@
 [submodule "pack/epheien/start/termdbg"]
 	path = pack/epheien/start/termdbg
 	url = https://github.com/epheien/termdbg.git
-[submodule "pack/junegunn/fzf.vim"]
-	path = pack/junegunn/fzf.vim
-	url = https://github.com/junegunn/fzf.vim.git
